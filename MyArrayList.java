@@ -1,7 +1,15 @@
 package com.luochuang.DS;
-
+/**
+ * -------------------------------------------------------------------------------
+ * size()  ->  return the numbers of items in this collection.
+ * get(int id)  ->  return the item at position id.
+ * set(int id, AnyType newVal)  ->  Changes the item at postion id.
+ * add(int id, AnyType x)  ->  add an item to this collection , at the specified index.
+ * remove(int index)  ->  Removes an item from this collection.
+ * ensureCapacity(int newCapacity)  ->  make sure the array has enough place.
+ * -------------------------------------------------------------------------------
+ */
 import java.util.Iterator;
-
 public class MyArrayList<AnyType> implements Iterable<AnyType> {
 	
 	private static final int DEFAULT_CAPACITY = 10;
