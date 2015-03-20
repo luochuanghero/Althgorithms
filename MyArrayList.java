@@ -120,6 +120,16 @@ public class MyArrayList<AnyType> implements Iterable<AnyType> {
 		theSize = 0;
 		ensureCapacity(DEFAULT_CAPACITY);
 	}
+	
+	@Override
+        public String toString() {
+         StringBuffer sb = new StringBuffer("[");
+         for (AnyType x : this) {
+            sb.append(x + ",");
+         }
+         sb.append("]");
+         return new String(sb);
+        }
 
 	@Override
 	public Iterator<AnyType> iterator() {
@@ -152,4 +162,16 @@ public class MyArrayList<AnyType> implements Iterable<AnyType> {
 			okToRemove = false;
 		}
 	}
+    public static void main(String[] args) {
+        MyArrayList<Integer> list = new MyArrayList();
+        for (int i = 0; i < 10; i++) {
+            list.add(i);
+        }
+        for (int i = 20; i < 30; i++) {
+            list.add(i);
+        }
+
+        list.remove(0);
+        System.out.println(list);
+    }
 }
