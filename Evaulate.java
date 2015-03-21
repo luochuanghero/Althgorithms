@@ -34,17 +34,20 @@ public class Evaulate {
     	   else if(s.equals("-"))  ops.push(s);
     	   else if(s.equals("*"))  ops.push(s);
     	   else if(s.equals("/"))  ops.push(s);
+    	   else if(s.equals("sqrt")) ops.push(s);
     	   else if(s.endsWith(")")){
     		    String op = ops.pop();
     		    Double val = vals.pop();
     		    if(op.equals("+")) val = vals.pop() + val;
-    		    if(op.equals("-")) val = vals.pop() + val;
-    		    if(op.equals("*")) val = vals.pop() + val;
-    		    if(op.equals("/")) val = vals.pop() + val;
+    		    if(op.equals("-")) val = vals.pop() - val;
+    		    if(op.equals("*")) val = vals.pop() * val;
+    		    if(op.equals("/")) val = vals.pop() / val;
+    		    if(op.equals("sqrt")) val = Math.sqrt(val);
     		    vals.push(val);
     	   }
     	   else vals.push(Double.parseDouble(s));
        }
+       System.out.println(vals.pop());
 	}
 	
     public static boolean isEmpty() {
